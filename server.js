@@ -10,9 +10,6 @@ const moment = require('moment');
 //cors origin issue
 app.use(cors({ origin: "*" }));
 
-
-
-
 // body-parser middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -20,12 +17,6 @@ app.use(express.urlencoded({ extended: true }));
 app.get("/", (req, res) => {
     res.status(200).end("Welcome")
 })
-
-
-
-
-
-
 
 app.post("/createfolder", (req, res) => {
 
@@ -58,8 +49,6 @@ app.post("/createfile/:foldername", (req,res) => {
         })
     } catch (err) { res.status(500).send(err) }
 })
-
-
 
 app.get("/readfile/:name", (req, res) => {
 
