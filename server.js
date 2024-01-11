@@ -53,8 +53,7 @@ app.post("/createfile/:foldername", (req,res) => {
 app.get("/readfile/:name", (req, res) => {
 
     const foldername = req.params.name;
-
-    // const folderPath = `F:/day39/${foldername}`
+    
     const folderPath = path.join(__dirname+`/${foldername}`)
 
     fs.readdir(folderPath, (err, files) => {
